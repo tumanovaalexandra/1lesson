@@ -1,40 +1,35 @@
 Given(/^I land on Help popup$/) do
-  text ("Help")
+  puts ("User lands on Help popup")
 end
 
 When(/^I click on Got it button$/) do
-   find_element(id: "button1").click
+  puts ("User click on Got in button")
 end
 
 Then(/^I land on Area screen$/) do
-  text ("Area")
+  puts ("User lands on Area screen")
 end
 
 When(/^I click on Swap button$/) do
- find_element(id: "fab").click
+  puts ("User clicks Swap button")
 end
 
 Then(/^I see "([^"]*)" in From header$/) do |value|
-  actual_value = find_element(id: "header_text_unit_from").text
-  puts("Expected value is #{value}")
-  puts("Actual value is #{actual_value}")
+  puts ("From header values is "+ value)
 end
 
 And(/^I see "([^"]*)" in To header$/) do |value|
-  actual_value = find_element(id: "header_text_unit_to").text
-  puts("Expected value is #{value}")
-  puts("Actual value is #{actual_value}")end
+  puts ("To header values is #{value}")
+end
 
 And(/^I click on Clear button$/) do
-  find_element(id: "menu_clear").click
+  puts ("User clicks on Clear button")
 end
 
 When(/^I enter "([^"]*)" to From field$/) do |value|
-  find_element(id: "header_value_from").send_keys(value)
+  puts("User entered value #{value}")
 end
 
 Then(/^I get "([^"]*)" in To failed$/) do |value|
-  actual_value = find_element(id: "header_value_to").text
-  puts("Expected value is #{value}")
-  puts("Actual value is #{actual_value}")
+  puts ("User sees #{value} in result field")
 end
